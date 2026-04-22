@@ -20,11 +20,14 @@ def main():
     action_run_id = os.environ["GITHUB_RUN_ID"]
     repository = os.environ["GITHUB_REPOSITORY"]
     server_url = os.environ["GITHUB_SERVER_URL"]
+    email = os.environ["APPLICANT_EMAIL"]
+    resume_link = os.environ["APPLICANT_RESUME_LINK"]
 
     payload = {
         "action_run_link": f"{server_url}/{repository}/actions/runs/{action_run_id}",
         "repository_link": f"{server_url}/{repository}",
-        "resume_link": "https://drive.google.com/file/d/1F4EjP70dc9TJ_yyKQC7wzFR85BZD8oek/view?usp=sharing",
+        "email": email,
+        "resume_link": resume_link,
         "timestamp": iso8601_timestamp(),
     }
 
