@@ -22,5 +22,9 @@ jobs:
           pip install requests
 
       - name: B12 application
+        env:
+          APPLICANT_EMAIL: ${{ secrets.APPLICANT_EMAIL }}
+          APPLICANT_RESUME_LINK: ${{ secrets.APPLICANT_RESUME_LINK }}
+          APPLICANT_NAME: ${{ secrets.APPLICANT_NAME }}
         run: |
           python b12_application.py
